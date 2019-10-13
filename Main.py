@@ -15,7 +15,7 @@ def print_hsv_at_coord(event, x, y, empty, data):
 cv2.namedWindow('hsv')
 cv2.setMouseCallback('hsv', print_hsv_at_coord)
 
-lower_range = np.array([103, 170, 175], dtype=np.uint8)
+lower_range = np.array([103, 170, 140], dtype=np.uint8)
 upper_range = np.array([108, 200, 200], dtype=np.uint8)
 
 while (True):
@@ -29,7 +29,8 @@ while (True):
 
     hsv = cv2.cvtColor(normalized_frame, cv2.COLOR_BGR2HSV)
     mask = cv2.inRange(hsv, lower_range, upper_range)
-    contours, hier = cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+    _, contours, _= cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+
 
     for c in contours:
         # get the bounding rect
@@ -53,12 +54,8 @@ while (True):
         # and draw the circle in blue
         frame = cv2.circle(frame, center, radius, (255, 0, 0), 2)
 
-    print(len(contours))
+    #print(len(contours))
     cv2.drawContours(frame, contours, -1, (255, 255, 0), 1)
-
-    cv2.imshow("contours", frame)
-
-    cv2.imshow("contours", frame)
 
     cv2.imshow('hsv', hsv)
     cv2.imshow('frame', frame)
