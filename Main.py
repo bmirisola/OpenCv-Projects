@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-import sys
+import os
 
 cap = cv2.VideoCapture(0)
 os.system("scripts/configure.sh")
