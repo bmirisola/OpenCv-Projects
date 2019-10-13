@@ -20,7 +20,12 @@ upper_range = np.array([105, 180, 140], dtype=np.uint8)
 
 while (True):
     ret, frame = cap.read()
-    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+
+    img_yuv = cv2.cvtColor(frame, cv2.COLOR_BGR2YUV)
+    img_yuv[:, :, 0] = cv2.equalizeHist(img_yuv[:, :, 0])
+    normalized_frame = cv2.cvtColor(img_yuv, cv2.COLOR_YUV2BGR)
+
+    hsv = cv2.cvtColor(normalized_frame, cv2.COLOR_BGR2HSV)
     mask = cv2.inRange(hsv, lower_range, upper_range)
 
     cv2.imshow('hsv', hsv)
