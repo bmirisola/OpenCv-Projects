@@ -3,7 +3,7 @@ import numpy as np
 import os
 
 cap = cv2.VideoCapture(0)
-os.system("sudo scripts/configure.sh")
+#os.system("sudo scripts/configure.sh")
 cap.set (3,640)
 cap.set(4,480)
 
@@ -25,7 +25,9 @@ while (True):
     img_yuv[:, :, 0] = cv2.equalizeHist(img_yuv[:, :, 0])
     normalized_frame = cv2.cvtColor(img_yuv, cv2.COLOR_YUV2BGR)
 
-    hsv = cv2.cvtColor(normalized_frame, cv2.COLOR_BGR2HSV)
+    blurred = cv2.GaussianBlur(normalized_frame, (11, 11), 0)
+
+    hsv = cv2.cvtColor(blurred, cv2.COLOR_BGR2HSV)
     mask = cv2.inRange(hsv, lower_range, upper_range)
 
     cv2.imshow('hsv', hsv)
