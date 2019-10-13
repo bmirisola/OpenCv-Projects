@@ -6,7 +6,7 @@ v4l2-ctl -d /dev/video$deviceId --set-ctrl=gain=0
 #v4l2-ctl -d /dev/video$deviceId --set-ctrl=sharpness=0
 v4l2-ctl -d /dev/video$deviceId --set-ctrl=backlight_compensation=0
 v4l2-ctl -d /dev/video$deviceId --set-ctrl=white_balance_temperature_auto=0
-#v4l2-ctl -d /dev/video$deviceId --set-ctrl=white_balance_temperature=6500
+v4l2-ctl -d /dev/video$deviceId --set-ctrl=white_balance_temperature=4000
 #v4l2-ctl -d /dev/video$deviceId --set-ctrl=exposure_auto=1
 #v4l2-ctl -d /dev/video$deviceId --set-ctrl=exposure_auto_priority=0
 #v4l2-ctl -d /dev/video$deviceId --set-ctrl=exposure_absolute=1
