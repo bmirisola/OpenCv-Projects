@@ -15,8 +15,8 @@ def print_hsv_at_coord(event, x, y, empty, data):
 cv2.namedWindow('hsv')
 cv2.setMouseCallback('hsv', print_hsv_at_coord)
 
-lower_range = np.array([95, 165, 125], dtype=np.uint8)
-upper_range = np.array([105, 180, 140], dtype=np.uint8)
+lower_range = np.array([103, 170, 175], dtype=np.uint8)
+upper_range = np.array([108, 200, 200], dtype=np.uint8)
 
 while (True):
     ret, frame = cap.read()
