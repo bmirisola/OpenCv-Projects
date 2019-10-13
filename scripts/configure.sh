@@ -10,8 +10,8 @@ v4l2-ctl -d /dev/video$deviceId --set-ctrl=backlight_compensation=0
 v4l2-ctl -d /dev/video$deviceId --set-ctrl=exposure_auto=0
 #v4l2-ctl -d /dev/video$deviceId --set-ctrl=exposure_auto_priority=0
 #v4l2-ctl -d /dev/video$deviceId --set-ctrl=exposure_absolute=1
-v4l2-ctl -d /dev/video$deviceId --set-ctrl=focus_auto=0
+v4l2-ctl -d /dev/video$deviceId --set-ctrl=focus_auto=1
 v4l2-ctl -d /dev/video$deviceId --set-ctrl=focus_absolute=0
-v4l2-ctl -d /dev/video$deviceId --set-ctrl=led1_mode=0
+#v4l2-ctl -d /dev/video$deviceId --set-ctrl=led1_mode=0
 
 
