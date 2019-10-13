@@ -1,0 +1,5 @@
+#Pycharm
+./idea
+#VENV
+*.pyc
+./venv
