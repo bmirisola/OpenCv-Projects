@@ -3,7 +3,7 @@ import numpy as np
 import os
 
 cap = cv2.VideoCapture(0)
-os.system("scripts/configure.sh")
+os.system("sudo scripts/configure.sh")
 cap.set (3,640)
 cap.set(4,480)
 
