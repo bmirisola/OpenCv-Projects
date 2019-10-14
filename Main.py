@@ -9,6 +9,7 @@ cap = cv2.VideoCapture(Constants.CAPTURE_SOURCE_ID)
 cap.set (3,640)
 cap.set(4,480)
 
+
 while (True):
     ret, frame = cap.read()
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
