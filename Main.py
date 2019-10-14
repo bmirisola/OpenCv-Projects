@@ -9,13 +9,14 @@ cap = cv2.VideoCapture(Constants.CAPTURE_SOURCE_ID)
 cap.set (3,640)
 cap.set(4,480)
 
-
 while (True):
     ret, frame = cap.read()
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     faces = face_cascade.detectMultiScale(gray, 1.1, 4)
     for (x, y, w, h) in faces:
         cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 2)
+        roi_gray = gray[y:y + h, x:x + w]
+        roi_color = frame[y:y + h, x:x + w]
 
     cv2.imshow('frame', frame)
 
