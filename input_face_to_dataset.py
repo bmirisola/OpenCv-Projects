@@ -1,10 +1,10 @@
 import cv2
-import os
+import Constants
 
 cap = cv2.VideoCapture(0)
 cap.set(3, 640) # set video width
 cap.set(4, 480) # set video height
-face_detector = cv2.CascadeClassifier('/home/pi/python_projects/OpenCV/data/haarcascades/haarcascade_frontalface_default.xml')
+face_detector = cv2.CascadeClassifier(Constants.HAARCASCADE_LOCATION)
 
 # For each person, enter one numeric face id
 face_id = input('\n enter user id and press <return> ==>  ')
