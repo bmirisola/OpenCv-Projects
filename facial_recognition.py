@@ -1,6 +1,4 @@
 import cv2
-import numpy as np
-import os
 import Constants
 
 recognizer = cv2.face.LBPHFaceRecognizer_create()
@@ -27,8 +25,8 @@ while True:
 
     faces = faceCascade.detectMultiScale(
         gray,
-        scaleFactor=1.1,
-        minNeighbors=5,
+        scaleFactor=Constants.SCALE_FACTOR,
+        minNeighbors=Constants.MINIMUM_NEIGHBORS,
         minSize=(int(minW), int(minH)),
     )
     for (x, y, w, h) in faces:
