@@ -16,7 +16,7 @@ count = 0
 while(True):
     ret, frame = cap.read()
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    faces = face_detector.detectMultiScale(gray, Constants.SCALE_FACTOR, Constants.MINIMUM_NEIGHBORS)
+    faces = face_detector.detectMultiScale(gray, Constants.SCALE_FACTOR + .1, Constants.MINIMUM_NEIGHBORS)
     for (x,y,w,h) in faces:
         cv2.rectangle(frame, (x,y), (x+w,y+h), (255,0,0), 2)
         count += 1
@@ -24,7 +24,7 @@ while(True):
         cv2.imwrite("dataset/User." + str(face_id) + '.' + str(count) + ".jpg", gray[y:y+h,x:x+w])
         cv2.imshow('frame', frame)
     k = cv2.waitKey(100) & 0xff # Press 'ESC' for exiting video
-    if k == 27:
+    if k == ord('q'):
         break
     elif count >= Constants.NUMBER_OF_DATA_SAMPLES: # Take 100 face sample and stop video
          break
