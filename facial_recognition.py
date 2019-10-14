@@ -8,6 +8,7 @@ recognizer.read('trainer/trainer.yml')
 cascadePath = Constants.HAARCASCADE_LOCATION
 faceCascade = cv2.CascadeClassifier(cascadePath);
 font = cv2.FONT_HERSHEY_SIMPLEX
+
 # iniciate id counter
 id = 0
 # names related to ids: example ==> Marcelo: id=1,  etc
@@ -19,13 +20,14 @@ cap.set(4, 480)  # set video height
 # Define min window size to be recognized as a face
 minW = 0.1 * cap.get(3)
 minH = 0.1 * cap.get(4)
+
 while True:
     ret, img = cap.read()
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
     faces = faceCascade.detectMultiScale(
         gray,
-        scaleFactor=1.2,
+        scaleFactor=1.3,
         minNeighbors=5,
         minSize=(int(minW), int(minH)),
     )
