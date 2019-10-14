@@ -45,7 +45,7 @@ while True:
 
     cv2.imshow('camera', frame)
     k = cv2.waitKey(10) & 0xff  # Press 'ESC' for exiting video
-    if k == 27:
+    if k == ord('q'):
         break
 # Do a bit of cleanup
 print("\n [INFO] Exiting Program and cleanup stuff")
