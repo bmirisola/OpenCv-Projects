@@ -1,10 +1,11 @@
 import cv2
 import numpy as np
 import os
+import Constants
 
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 recognizer.read('trainer/trainer.yml')
-cascadePath = "haarcascade_frontalface_default.xml"
+cascadePath = Constants.HAARCASCADE_LOCATION
 faceCascade = cv2.CascadeClassifier(cascadePath);
 font = cv2.FONT_HERSHEY_SIMPLEX
 # iniciate id counter
