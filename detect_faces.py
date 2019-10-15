@@ -12,7 +12,7 @@ net = cv2.dnn.readNetFromCaffe(Constants.PROTOTEXT, Constants.MODEL)
 print("[INFO] starting video stream...")
 vs = VideoStream(src=0).start()
 #For pi camera use:
-VideoStream(usePiCamera=True).start()
+#VideoStream(usePiCamera=True).start()
 time.sleep(2.0)
 
 # load the input image and construct an input blob for the image
