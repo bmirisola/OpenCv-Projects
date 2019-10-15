@@ -6,4 +6,4 @@ MODEL = "paths/res10_300x300_ssd_iter_140000.caffemodel"
 IMAGE = "images/Ha-mil.jpg"
 #IMAGE = "images/Benny and Link.jpg"
 PROTOTEXT = "paths/deploy.prototxt.txt"
-CONFIDENCE = 0.1
+CONFIDENCE = 0.5
