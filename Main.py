@@ -1,5 +1,4 @@
 import cv2
-import numpy as np
 import Constants
 
 cap = cv2.VideoCapture(Constants.CAPTURE_SOURCE_ID)
