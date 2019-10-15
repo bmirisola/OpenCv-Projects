@@ -12,8 +12,10 @@ net = cv2.dnn.readNetFromCaffe(Constants.PROTOTEXT, Constants.MODEL)
 print("[INFO] starting video stream...")
 vs = VideoStream(src=0).start()
 #For pi camera use:
-#VideoStream(usePiCamera=True).start()
+VideoStream(usePiCamera=True).start()
 #time.sleep(2.0)
+
+frame2 = vs.read()
 
 # load the input image and construct an input blob for the image
 # by resizing to a fixed 300x300 pixels and then normalizing it
@@ -57,13 +59,12 @@ while True:
             cv2.putText(frame, text, (startX, y),
                         cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0, 0, 255), 2)
 
+    # show the output image
+    cv2.imshow("Frame", frame)
+    cv2.waitKey(0)
+
     key = cv2.waitKey(1) & 0xFF
 
     # if the `q` key was pressed, break from the loop
     if key == ord("q"):
         break
-
-
-# show the output image
-cv2.imshow("Frame", frame)
-cv2.waitKey(0)
