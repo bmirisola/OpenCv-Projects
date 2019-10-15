@@ -19,7 +19,7 @@ net = cv2.dnn.readNetFromCaffe(Constants.PROTOTEXT, Constants.MODEL)
 
 # load the input image and construct an input blob for the image
 # by resizing to a fixed 300x300 pixels and then normalizing it
-image = cv2.imread(args["image"])
+image = cv2.imread(Constants.IMAGE)
 (h, w) = image.shape[:2]
 blob = cv2.dnn.blobFromImage(cv2.resize(image, (300, 300)), 1.0,
                              (300, 300), (104.0, 177.0, 123.0))
