@@ -13,9 +13,7 @@ print("[INFO] starting video stream...")
 vs = VideoStream(src=0).start()
 #For pi camera use:
 VideoStream(usePiCamera=True).start()
-#time.sleep(2.0)
-
-frame2 = vs.read()
+time.sleep(2.0)
 
 # load the input image and construct an input blob for the image
 # by resizing to a fixed 300x300 pixels and then normalizing it
