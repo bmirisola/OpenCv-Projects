@@ -15,9 +15,6 @@ vs = VideoStream(src=0).start()
 #VideoStream(usePiCamera=True).start()
 time.sleep(2)
 
-# load the input image and construct an input blob for the image
-# by resizing to a fixed 300x300 pixels and then normalizing it
-
 # loop over the frames from the video stream
 while True:
     # grab the frame from the threaded video stream and resize it
@@ -66,5 +63,5 @@ while True:
         break
 
     # do a bit of cleanup
-    cv2.destroyAllWindows()
-    vs.stop()
+cv2.destroyAllWindows()
+vs.stop()
