@@ -10,7 +10,10 @@ net = cv2.dnn.readNetFromCaffe(Constants.PROTOTEXT, Constants.MODEL)
 
 # initialize the video stream and allow the camera sensor to warm up
 print("[INFO] starting video stream...")
-vs = VideoStream(src=0).start()
+cap = cv2.VideoCapture(Constants.CAPTURE_SOURCE_ID)
+cap.set (3,Constants.CAMERA_WIDTH)
+cap.set(4,Constants.CAMERA_HEIGHT)
+# vs = VideoStream(src=0).start()
 #For pi camera use:
 #VideoStream(usePiCamera=True).start()
 time.sleep(2)
@@ -19,8 +22,8 @@ time.sleep(2)
 while True:
     # grab the frame from the threaded video stream and resize it
     # to have a maximum width of 400 pixels
-    frame = vs.read()
-    frame = imutils.resize(frame, width=Constants.CAMERA_WIDTH,height= Constants.CAMERA_HEIGHT)
+    ret, frame = cap.read()
+    #frame = imutils.resize(frame, width=Constants.CAMERA_WIDTH,height= Constants.CAMERA_HEIGHT)
 
     # grab the frame dimensions and convert it to a blob
     (h, w) = frame.shape[:2]
