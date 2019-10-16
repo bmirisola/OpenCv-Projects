@@ -16,7 +16,7 @@ cap.set(4,Constants.CAMERA_HEIGHT)
 # vs = VideoStream(src=0).start()
 #For pi camera use:
 #VideoStream(usePiCamera=True).start()
-#time.sleep(2)
+time.sleep(10)
 
 # loop over the frames from the video stream
 while True:
