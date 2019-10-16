@@ -66,4 +66,4 @@ while True:
 
     # do a bit of cleanup
 cv2.destroyAllWindows()
-vs.stop()
+cap.stop()
