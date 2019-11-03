@@ -10,7 +10,7 @@ font = cv2.FONT_HERSHEY_SIMPLEX
 # iniciate id counter
 id = 0
 # names related to ids: example ==> Marcelo: id=1,  etc
-names = ['None', 'Benny', 'Jon', 'Justin', 'Tudor', 'Maor', "Ha-mil"]
+names = ['None', 'Benny', 'Jon', 'Justin', 'Tudor', 'Maor', "Ha-mil", "Jean", "Malcolm"]
 # Initialize and start realtime video capture
 cap = cv2.VideoCapture(0)
 cap.set(3, 640)  # set video width
