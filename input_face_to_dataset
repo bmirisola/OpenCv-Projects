@@ -28,17 +28,17 @@ while(True):
         hasGottenTime = True
         # Save the captured image into the datasets folder
     newTime = time.time()
-    if(math.fabs(newTime-oldTime) == .5):
+    if math.fabs(newTime-oldTime) >= .5:
         cv2.imwrite(path + str(face_id) + '.' + str(count) + ".jpg", frame)
         count += 1
         hasGottenTime = False
+        print ("Taken Sample!!!")
     cv2.imshow('frame', frame)
     k = cv2.waitKey(100) & 0xff # Press 'ESC' for exiting video
     if k == ord('q'):
         break
     elif count >= Constants.NUMBER_OF_DATA_SAMPLES: # Take 100 face sample and stop video
          break
-    print(time.time())
 
 # Do a bit of cleanup
 print("\n [INFO] Exiting Program and cleanup stuff")
