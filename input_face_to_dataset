@@ -30,6 +30,7 @@ while(True):
         break
     elif count >= Constants.NUMBER_OF_DATA_SAMPLES: # Take 100 face sample and stop video
          break
+    print(time.time())
 
 # Do a bit of cleanup
 print("\n [INFO] Exiting Program and cleanup stuff")
