@@ -10,9 +10,9 @@ cap.set(4, 480) # set video height
 # For each person, enter one face id
 face_id = input('\n enter user id and press <return> ==>  ')
 print("\n [INFO] Initializing face capture. Look at the camera and wait ...")
-if not "dataset/"+str(face_id)+ "/".exists():
-    os.mkdir("dataset/"+str(face_id))
 path = "dataset/"+str(face_id)+ "/"
+if not os.path.exists(path):
+    os.mkdir("dataset/"+str(face_id))
 time.sleep(2)
 
 # Initialize individual sampling face count
