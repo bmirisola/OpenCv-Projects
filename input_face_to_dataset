@@ -23,8 +23,8 @@ while(True):
         count += 1
         # Save the captured image into the datasets folder
         cv2.imwrite(path + str(face_id) + '.' + str(count) + ".jpg", frame)
-        cv2.imshow('frame', frame)
         time.sleep(0.5)
+    cv2.imshow('frame', frame)
     k = cv2.waitKey(100) & 0xff # Press 'ESC' for exiting video
     if k == ord('q'):
         break
