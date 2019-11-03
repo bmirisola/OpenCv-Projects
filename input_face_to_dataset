@@ -29,7 +29,7 @@ while(True):
         # Save the captured image into the datasets folder
     newTime = time.time()
     if math.fabs(newTime-oldTime) >= Constants.SAMPLE_RATE:
-        cv2.imwrite(path + str(face_id) + '.' + str(count+1) + ".jpg", frame)
+        cv2.imwrite(path + str(face_id) + '.' + str(count) + ".jpg", frame)
         count += 1
         hasGottenTime = False
         print ("Taken Sample!!!")
