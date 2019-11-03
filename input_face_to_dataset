@@ -19,17 +19,17 @@ count = 0
 
 while(True):
     ret, frame = cap.read()
-    for x in range(Constants.NUMBER_OF_DATA_SAMPLES):
-        count += 1
+    count += 1
         # Save the captured image into the datasets folder
-        cv2.imwrite(path + str(face_id) + '.' + str(count) + ".jpg", frame)
-        time.sleep(0.5)
+    cv2.imwrite(path + str(face_id) + '.' + str(count) + ".jpg", frame)
+    time.sleep(2)
     cv2.imshow('frame', frame)
     k = cv2.waitKey(100) & 0xff # Press 'ESC' for exiting video
     if k == ord('q'):
         break
     elif count >= Constants.NUMBER_OF_DATA_SAMPLES: # Take 100 face sample and stop video
          break
+    time.sleep(.5);
 
 # Do a bit of cleanup
 print("\n [INFO] Exiting Program and cleanup stuff")
