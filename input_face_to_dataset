@@ -28,7 +28,7 @@ while(True):
         hasGottenTime = True
         # Save the captured image into the datasets folder
     newTime = time.time()
-    if math.fabs(newTime-oldTime) >= .5:
+    if math.fabs(newTime-oldTime) >= Constants.SAMPLE_RATE:
         cv2.imwrite(path + str(face_id) + '.' + str(count) + ".jpg", frame)
         count += 1
         hasGottenTime = False
