@@ -34,4 +34,3 @@ while(True):
 print("\n [INFO] Exiting Program and cleanup stuff")
 cap.release()
 cv2.destroyAllWindows()
-exec(open("face_trainer.py").read());
